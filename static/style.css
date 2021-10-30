@@ -1,0 +1,107 @@
+html { width: 100%; height:100%; overflow:hidden; }
+
+body {
+	width: 100%;
+	height:100%;
+	font-family: 'Open Sans', sans-serif;
+	background: #3876da;
+	color: #fff;
+	font-size: 18px;
+	text-align:center;
+    letter-spacing:1.2px;
+    background: linear-gradient(to left top, #559457, #0e4911) fixed;
+}
+.page {
+	position: absolute;
+	top: 5%;
+	/* left: 50%;
+	margin: -150px 0 0 -150px; */
+	/* width:600px;
+	height:600px; */
+}
+
+.page h1{
+	margin-top: 50px;
+}
+
+.page h2{
+	margin-top: 0px;
+}
+
+.res{
+    color: rgb(64, 3, 70);
+}
+
+.pred{
+	color: rgb(64, 3, 70);
+}
+
+input {
+	width: 100%;
+	margin-bottom: 10px;
+	background: rgba(23, 123, 216, 0.3);
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 13px;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+	-webkit-transition: box-shadow .5s ease;
+	-moz-transition: box-shadow .5s ease;
+	-o-transition: box-shadow .5s ease;
+	-ms-transition: box-shadow .5s ease;
+	transition: box-shadow .5s ease;
+}
+input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+
+div {
+margin: auto;
+position:relative;
+/* top: 200px;
+width: 40%; */
+}
+
+#form {
+width: 400px;
+padding: 10px;
+font-size: 18px;
+outline:none;
+background: linear-gradient(to left top, rgb(81, 196, 231), #44c1e7) fixed;
+border-radius: 10px;
+border: 2px solid rgba(61, 182, 238, 0.2);
+color: rgba(95, 212, 241, 0.8);
+transition: all 0.5s;
+}
+
+#form:hover {
+border: 2px solid rgba(2, 208, 245, 0.5);
+}
+#form:focus {
+border: 2px solid rgba(255,255,255,0.5);
+background: linear-gradient(to left top, #000, #0addec) fixed;
+}
+
+#button {
+width: 500px;
+padding: 10px;
+font-size: 15px;
+font-weight:bold;
+outline:none;
+background: linear-gradient(to left top, #000, #32c0b9) fixed;
+border-radius: 10px;
+border: 5px solid rgba(255,255,255,0.2);
+color: rgba(252, 250, 250, 0.8);
+transition: all 0.5s;
+}
+
+#button:hover {
+border: 5px solid rgba(255,255,255,0.5);
+background: linear-gradient(to left top, #000, #8b5db0) fixed;
+}
+
+#button:focus {
+background: linear-gradient(to left top, #8b5db0, #000) fixed;
+}

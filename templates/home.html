@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Predict Food Supply</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+
+</head>
+
+<body>
+ <div class="page">
+
+    <h2>THIS IS A DEMONSTRATION OF A MACHINE LEARNING APP</h2>
+    <p>This is not medical or legal guidance </p>
+
+     <h1>Predict Food Supply</h1>
+     <p>Data collected from https://ourworldindata.org/food-supply</p>
+
+     <h3><span style="color: #ff0000">1:</span> 'Protein supply quantity (g/capita/day) - Grand Total', <span style="color: #ff0000">2:</span> 'Fat supply quantity (g/capita/day) - Grand Total', <span style="color: #ff0000">3:</span> 'Animal Products - Protein supply quantity (g/capita/day)', <span style="color: #ff0000">4:</span> 'Eggs - Food supply quantity (kg/capita/yr)', <span style="color: #ff0000">5:</span> 'Milk - Excluding Butter - Food supply quantity (kg/capita/yr)', <span style="color: #ff0000">6:</span> 'Meat food supply quantity (kg/capita/yr)', <span style="color: #ff0000">7:</span> 'Pigmeat food supply quantity (kg/capita/yr)', <span style="color: #ff0000">8:</span> 'Vegetables - Food supply quantity (kg/capita/yr)'</h3>
+
+     <!-- Form to enter new data for predictions  -->
+     <form if="form" action="{{ url_for('get_data')}}"method="POST">
+         <input type="text" name="textbox" placeholder="Data" required="required" /><br>
+         <h2 class='pred'> {{pred}}</h2>
+         <h2 class='res'>{{data_num}}</h2>
+         <button id="button" type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+
+
+    <h3>Available countries:</h3>
+    <p>['Afghanistan', 'Africa', 'Albania', 'Algeria', 'Americas', 'Angola', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Asia', 'Asia, Central', 'Australia', 'Australia & New Zealand', 'Austria', 'Azerbaijan', 'Bahamas', 'Bangladesh', 'Barbados', 'Belarus','Belgium', 'Belgium-Luxembourg', 'Belize', 'Benin', 'Bermuda', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Brazil', 'Brunei', 'Bulgaria', 'Burkina Faso', 'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Caribbean', 'Central African Republic', 'Central America', 'Chad', 'Chile', 'China', 'Colombia', 'Congo', 'Costa Rica', "Cote d'Ivoire", 'Croatia', 'Cuba', 'Cyprus', 'Czech Republic', 'Czechoslovakia', 'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'Eastern Africa', 'Eastern Asia', 'Eastern Europe', 'Ecuador', 'Egypt', 'El Salvador', 'Estonia', 'Ethiopia', 'Ethiopia PDR', 'Europe', 'Europe, Western', 'European Union', 'Fiji', 'Finland', 'France', 'French Polynesia', 'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Greece', 'Grenada', 'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Honduras', 'Hong Kong', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Kuwait', 'Kyrgyzstan', 'Land Locked Developing Countries', 'Laos', 'Latvia', 'Least Developed Countries', 'Lebanon', 'Lesotho', 'Liberia', 'Lithuania', 'Low Income Food Deficit Countries', 'Luxembourg', 'Macao', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Mauritania', 'Mauritius', 'Melanesia', 'Mexico', 'Micronesia (region)', 'Middle Africa', 'Moldova', 'Mongolia', 'Montenegro', 'Morocco', 'Mozambique', 'Myanmar', 'Namibia', 'Nepal', 'Net Food Importing Developing Countries', 'Netherlands', 'Netherlands Antilles', 'New Caledonia', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'North Korea', 'Northern Africa', 'Northern America', 'Northern Europe', 'Norway', 'Oceania', 'Oman', 'Pakistan', 'Panama', 'Paraguay', 'Peru', 'Philippines', 'Poland', 'Polynesia', 'Portugal', 'Romania', 'Russia', 'Rwanda', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Vincent and the Grenadines', 'Samoa', 'Sao Tome and Principe', 'Saudi Arabia', 'Senegal', 'Serbia', 'Serbia and Montenegro', 'Sierra Leone', 'Slovakia', 'Slovenia', 'South Africa', 'South America', 'South Eastern Asia', 'South Korea', 'Southern Africa', 'Southern Asia', 'Southern Europe', 'Spain', 'Sri Lanka', 'Sudan', 'Sudan (former)', 'Suriname', 'Swaziland', 'Sweden', 'Switzerland', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', 'Timor', 'Togo', 'Trinidad and Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'USSR', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Venezuela', 'Vietnam', 'Western Africa', 'Western Asia', 'World', 'Yemen', 'Yugoslavia', 'Zambia', 'Zimbabwe']</p>
+
+   <br>
+   <br>
+
+
+ </div>
+
+
+</body>
+</html>
