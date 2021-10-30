@@ -24,7 +24,7 @@ def get_data(data=[0]*n_features):
 
         prediction = model.predict(data)[0]
         return render_template("home.html", pred=f"Food supply will be {prediction} (kcal/capita/day)", data_num='1/8')
-    return render_template("home.html", data_num=f"{num}/{n_features}")
+    return render_template("home.html", data_num=f"{len(data)}")
 
 @app.route('/box', methods=['POST'])
 def box():
