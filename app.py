@@ -13,7 +13,7 @@ def home():
     return render_template("home.html", pred='1/8')
 
 @app.route('/get_data', methods=['POST'])
-def get_data(data=[0]*n_features):
+def get_data(data=[0]*n_features, num=num):
     message = float([x for x in request.form.values()][0])
 
     data.append(message)
