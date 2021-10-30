@@ -12,10 +12,23 @@ def home():
     return render_template("home.html", pred='1/8')
 
 @app.route('/get_data', methods=['POST'])
-def get_data(data=[0]*n_features):
+def get_data():
     message = float([x for x in request.form.values()][0])
-    data.append(message)
-    num = (len(data)%n_features)+1
+    
+    f = open("data.txt", "a+")
+    f.write(str(message))
+    f.write("\n")
+    f.close()
+    
+    f = open("data.txt", "r+")
+    data = [r for r in f.readlines()]
+    f.close()
+
+    #if f.mode == "r":
+     #   data = f.read()
+    #f.close()
+
+    """num = (len(data)%n_features)+1
     
     if num == n_features:
         model = load("model.joblib")
@@ -23,8 +36,8 @@ def get_data(data=[0]*n_features):
         data = np.array(data).reshape(1, -1)
 
         prediction = model.predict(data)[0]
-        return render_template("home.html", pred=f"Food supply will be {prediction} (kcal/capita/day)", data_num='1/8')
-    return render_template("home.html", data_num=f"{len(data)}")
+        return render_template("home.html", pred=f"Food supply will be {prediction} (kcal/capita/day)", data_num='1/8')"""
+    return render_template("home.html", data_num=f"{data}")
 
 @app.route('/box', methods=['POST'])
 def box():
