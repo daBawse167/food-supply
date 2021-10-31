@@ -31,14 +31,14 @@ def get_data():
                 model = load("model.joblib")
                 data = np.array(data).reshape(1, -1)
                 prediction = model.predict(data)[0]
-                return render_template("home.html", pred=f"Food supply will be {prediction} (kcal/capita/day)", data_num='1/8')
+                return render_template("home.html", pred=f"Food supply will be {prediction} (kcal/capita/day)")
 
     f = open("data.txt", "a+")
     f.write(str(message)+'\n')
     f.close()
     
     f = open("data.txt", "r+")
-    data = [float(r[:-2]) for r in f.readlines()]
+    data = [r for r in f.readlines()]
     f.close()
 
     length = len(data)
