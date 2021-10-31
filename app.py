@@ -9,6 +9,9 @@ n_features = 8
 
 @app.route('/')
 def home():
+    f = open("data.txt", "r+")
+    f.truncate(0)
+    f.close()
     return render_template("home.html", pred='1/8')
 
 @app.route('/get_data', methods=['POST'])
