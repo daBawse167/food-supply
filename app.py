@@ -33,7 +33,7 @@ def get_data():
         f.truncate(0)
         f.close()
         return render_template("home.html", pred=f"Food supply will be {prediction} (kcal/capita/day)", data_num='1/8')
-    return render_template("home.html", data_num=f"{length}/{n_features}")
+    return render_template("home.html", data_num=f"{length+1}/{n_features}")
 
 @app.route('/box', methods=['POST'])
 def box():
