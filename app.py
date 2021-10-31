@@ -38,24 +38,5 @@ def get_data():
         return render_template("home.html", pred=f"Food supply will be {prediction} (kcal/capita/day)", data_num='1/8')
     return render_template("home.html", data_num=f"{length+1}/{n_features}")
 
-@app.route('/box', methods=['POST'])
-def box():
-    url = "https://raw.githubusercontent.com/daBawse167/owid-datasets/master/datasets/Food%20supply%20(FAO%2C%202020)/Food%20supply%20(FAO%2C%202020).csv"
-    df = pd.read_csv(url).drop('Food supply (kcal/capita/day) - Grand Total', axis=1)
-    message = [x for x in request.form.values()][0]
-
-    if message not in np.unique(df['Entity']):
-        return f"Country is not in our list. Please go back to your browser.", 400
-
-    model = load("model.joblib")
-
-    avg = np.nanmean(df['Pigmeat food supply quantity (kg/capita/yr)'])
-    df = df.fillna(avg)
-
-    to_pred = (df[df["Entity"]==message]).drop('Entity', axis=1)
-    prediction = round(model.predict(to_pred)[0])
-
-    return render_template("home.html", pred=f"Food supply will be {prediction} (kcal/capita/day)")
-
 if __name__ == "__main__":
     app.run(debug=True)
