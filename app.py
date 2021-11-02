@@ -28,7 +28,7 @@ def get_data():
                 return "Data must consist of 8 features"
             else:
                 data = [float(''.join(c for c in element if (c in digits or c=='.'))) for element in data]
-                model = load("model.joblib")
+                model = load("rf.joblib")
                 data = np.array(data).reshape(1, -1)
                 prediction = model.predict(data)[0]
                 return render_template("home.html", pred=f"Food supply will be {prediction} (kcal/capita/day)")
@@ -42,8 +42,8 @@ def get_data():
     f.close()
 
     length = len(data)
-    if length >= 8:
-        model = load("model.joblib")
+    if length == 8:
+        model = load("rf.joblib")
         data = np.array(data).reshape(1, -1)
         prediction = model.predict(data)[0]
         
